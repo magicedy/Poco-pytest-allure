@@ -16,10 +16,11 @@ else:
     reqs = []
 
 setup(
-    name='poco-pytest-allure-',
+    name='poco-pytest-allure',
     version='0.0.1',
     description='A test automation project using poco, pytest and allure.',
     packages=find_packages(),
     include_package_data=True,
     install_requires=reqs,
+    license='MIT License'
 )
