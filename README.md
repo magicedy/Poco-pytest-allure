@@ -15,10 +15,12 @@ How to use?
 **2.** Download the demo game from [Poco](https://poco.readthedocs.io/zh_CN/latest/source/doc/poco-example/index.html), e.g. 'C:\com.netease.poco.u3d.tutorial.apk'
 -  [demo game android](http://top.gdl.netease.com/poco-res/poco-demo-unity-game-android.zip)
 -  [demo game windows](http://top.gdl.netease.com/poco-res/poco-demo-unity-game-win.zip)
+    params in pocopytest\testcase\utils\util_define.py, e.g. SetupDefine.PLAT
 
 **3.** Connect Device and run the script.
 ```
-    pytest Poco-pytest-allure
+    cd Poco-pytest-allure
+    pytest
 ```
 
 **4.** Check the test results with [allure2](https://github.com/allure-framework/allure2/releases).

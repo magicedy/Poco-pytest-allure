@@ -4,7 +4,7 @@ from airtest.core.api import ST
 
 
 class SetupDefine(object):
-    PLAT = 'Android-sim'  # 平台'Android','Android-sim','PC_win','PC_editor','iOS','MAC_editor'
+    PLAT = 'PC_win'  # 平台'Android','Android-sim','PC_win','PC_editor','iOS','MAC_editor'
     POCO_PORT = 5001  # poco-sdk端口
     SIM_PORT = 7555  # 安卓模拟器端口,7555对应mumu模拟器
     SLEEP_TIME = 8  # 启动app后等待时间
