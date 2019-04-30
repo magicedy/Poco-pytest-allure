@@ -18,7 +18,7 @@ How to use?
 
 **3.** Connect Device and run the script.
 ```
-    pytest Poco-pytest-allure -s -q --alluredir=Poco-pytest-allure/allure_pytest_results --clean-alluredir
+    pytest Poco-pytest-allure
 ```
 
 **4.** Check the test results with [allure2](https://github.com/allure-framework/allure2/releases).
@@ -29,7 +29,7 @@ How to use?
     * Use allure.bat for Windows and allure for other Unix platforms.
     * Add allure to system PATH.
 
-    allure serve Poco-pytest-allure/allure_pytest_results -p 9090
+    allure serve allure_pytest_results -p 9090
     
     * Running on http://127.0.0.1:9090/ (Press CTRL+C to quit)
 ```
