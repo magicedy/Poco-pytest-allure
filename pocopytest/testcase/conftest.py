@@ -6,6 +6,7 @@ from airtest.core.win import Windows
 from poco.drivers.unity3d import UnityPoco
 
 from pocopytest.lib.utils.init_app import init_app
+from pocopytest.testcase.utils.util import allure_snap
 from pocopytest.testcase.utils.util_define import SetupDefine as SD
 
 
@@ -24,6 +25,7 @@ def poco(request):
     request.cls.poco = poco
     yield request.cls.poco
     # yield语句后面相当于teardown
+    allure_snap()
     if plat.lower().find('android') >= 0:
         stop_app(SD.PACKAGE_NAME)  # 整个测试session结束后，关闭app
     elif plat.lower().find('pc') >= 0:

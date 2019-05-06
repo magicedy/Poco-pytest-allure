@@ -1,3 +1,4 @@
 pocoui
 pytest
+pytest-rerunfailures
 allure-pytest
