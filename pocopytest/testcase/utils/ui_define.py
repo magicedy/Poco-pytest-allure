@@ -7,7 +7,7 @@ class UIDefine(object):
     """
     query表达式相关可以参照poco的Selector类
 
-    expr := (l)
+    expr := (op0, (expr0, expr1))
     - ``op0`` can be one of the following ('>', '/', '-'), each operator stands for as follows::
 
         '>': offsprings, select all offsprings matched expr1 from all roots matched expr0.
@@ -24,6 +24,7 @@ b
 
     INPUT_VIEW = bq('playBasic')
     INPUT_FILED = ('>', (INPUT_VIEW, bq('pos_input')))  # playBasic>pos_input
+    INPUT_ASSERT = ('>', (INPUT_FILED, bq('Text')))  # playBasic>pos_input>Text
 
     LIST_VIEW = bq('playListView')
     LIST_SCROLLVIEW = ('>', (LIST_VIEW, bq('Scroll View')))  # playBasic>pos_input
