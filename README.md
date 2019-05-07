@@ -20,7 +20,7 @@ How to use?
 **3.** Connect Device and run the script.
 ```
     cd Poco-pytest-allure
-    pytest
+    pytest # python main.py(to use pytest-xdist)
 ```
 
 **4.** Check the test results with [allure2](https://github.com/allure-framework/allure2/releases).
@@ -36,14 +36,14 @@ How to use?
     * Running on http://127.0.0.1:9090/ (Press CTRL+C to quit)
 ```
 
-    
+
 Drag the Bookmarklet like this: 
 <a href="javascript:void((() => {document.querySelectorAll('.step__title_hasContent,.attachment-row').forEach(el => el.click())})())">Expand All</a>
 
 ![allure](images/Bookmarklet.png)
 
 ```
-    javascript:void((() => {document.querySelectorAll('.step__title_hasContent,.attachment-row').forEach(el => el.click())})())
+javascript:void((() => {document.querySelectorAll('.step__title_hasContent,.attachment-row').forEach(el => el.click())})())
 ```
 ![allure](images/allure.gif)
 

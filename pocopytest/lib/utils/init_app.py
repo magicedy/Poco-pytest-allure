@@ -1,6 +1,7 @@
 # coding=utf-8
 
 import os
+import re
 
 from airtest.core.api import device as current_device, connect_device
 from airtest.core.api import start_app, stop_app, sleep, wake
@@ -12,14 +13,16 @@ from pocopytest.lib.utils.installation import install_android_app
 from pocopytest.testcase.utils.util_define import SetupDefine as SD
 
 
-def init_app(plat, package_name, app_path, sleep_time):
+def init_app(plat, package_name, app_path, sleep_time, serialno=None):
     dev = None
     if plat.lower().find('android') >= 0:
-        if not current_device():
-            if plat.lower().find('sim') >= 0:
-                dev = connect_device('Android:///127.0.0.1:{}?cap_method=JAVACAP&ori_method=ADBORI'.format(SD.SIM_PORT))
+        if serialno:
+            if re.search('127.0.0.1:\d+', serialno):
+                dev = connect_device('Android:///{}?cap_method=JAVACAP&ori_method=ADBORI'.format(serialno))
             else:
-                dev = connect_device('Android:///')
+                dev = connect_device('Android:///{}'.format(serialno))
+        else:
+            dev = connect_device('Android:///')
         wake()
         install_android_app(current_device().adb, app_path)
         stop_app(package_name)

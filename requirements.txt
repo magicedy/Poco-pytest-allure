@@ -1,4 +1,5 @@
 pocoui
 pytest
 pytest-rerunfailures
-allure-pytest
+pytest-xdist
+allure-pytest<=2.6.1
