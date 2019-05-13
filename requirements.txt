@@ -2,4 +2,4 @@ pocoui
 pytest
 pytest-rerunfailures
 pytest-xdist
-allure-pytest<=2.6.1
+allure-pytest
