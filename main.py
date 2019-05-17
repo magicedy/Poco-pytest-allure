@@ -7,7 +7,7 @@ from airtest.core.android.adb import ADB
 
 
 def del_json_file():
-    json_file = os.path.join(os.getcwd(), 'data.json')
+    json_file = os.path.join(os.path.dirname(__file__), 'data.json')
     if os.path.isfile(json_file):
         os.remove(json_file)
 

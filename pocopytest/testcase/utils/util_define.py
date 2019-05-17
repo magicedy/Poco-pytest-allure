@@ -13,7 +13,8 @@ class SetupDefine(object):
     PLAT = 'Android'  # 平台'Android','PC_win','PC_editor','iOS','MAC_editor'
     POCO_PORT = 5001  # poco-sdk端口
     SLEEP_TIME = 8  # 启动app后等待时间
-    ST.LOG_DIR = os.path.join(os.getcwd(), 'allure_pytest_results')
+    ST.PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '../../../')
+    ST.LOG_DIR = os.path.join(ST.PROJECT_ROOT, 'allure_pytest_results')
     SNAP_OFF = False
 
     """
@@ -26,7 +27,7 @@ class SetupDefine(object):
     APP_PATH_WIN = r'c:\poco-demo-unity-game-win\com.netease.poco.u3d.tutorial.exe'
     APP_PATH_PC_EDITOR = r'C:\Program Files\Unity\Editor\Unity.exe -projectPath C:\xxx'  # U3D工程目录
 
-    JSON_FILE = os.path.join(os.getcwd(), 'data.json')
+    JSON_FILE = os.path.join(ST.PROJECT_ROOT, 'data.json')
     SERIALNO = None
 
     def load_json_data(self):

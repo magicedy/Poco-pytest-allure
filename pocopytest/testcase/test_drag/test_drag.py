@@ -7,7 +7,7 @@ from pocopytest.testcase.utils.util import *
 @allure.story('拖动')
 class TestDrag:
     @allure.title('拖动测试')
-    # @NewTest
+    @NewTest
     def test_drag(self):
         u_drag = new_poco(self.poco, UI.DRAG_VIEW)
         u_drag.wait_for_appearance(timeout=5)
