@@ -4,6 +4,7 @@ import os
 import json
 import time
 import random
+import logging
 
 from airtest.core.api import ST
 from airtest.core.android.adb import ADB
@@ -16,7 +17,10 @@ class SetupDefine(object):
     ST.PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '../../../')
     ST.LOG_DIR = os.path.join(ST.PROJECT_ROOT, 'allure_pytest_results')
     SNAP_OFF = False
-
+    WORKER_ID = os.environ.get('PYTEST_XDIST_WORKER', None)
+    LOG_LEVEL = logging.DEBUG  # logger(pocopytest.*)的level
+    AIRTEST_LOG_LEVEL = logging.WARNING  # logger(airtest.*)的level
+    TESTCASE_LOG_LEVEL = logging.DEBUG  # logger(testcase.*)的level
     """
     https://poco.readthedocs.io/zh_CN/latest/source/doc/poco-example/index.html
     http://top.gdl.netease.com/poco-res/poco-demo-unity-game-android.zip
