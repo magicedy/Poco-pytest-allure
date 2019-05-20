@@ -35,7 +35,7 @@ def init_logging(name, level=logging.DEBUG, module_or_name='module'):
     logger.addHandler(handler)
 
 
-init_logging(name=__name__.split('.')[0], level=SD.TESTCASE_LOG_LEVEL)
+init_logging(name=__name__.split('.')[0], level=SD.LOG_LEVEL)
 
 
 def allure_snap(snap_off=SD.SNAP_OFF):
