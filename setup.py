@@ -17,7 +17,7 @@ else:
 
 setup(
     name='poco-pytest-allure',
-    version='0.0.2',
+    version='0.0.3',
     description='A test automation project using poco, pytest and allure.',
     packages=find_packages(),
     include_package_data=True,

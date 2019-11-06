@@ -20,7 +20,8 @@ b
     MENU_VIEW = bq('levelSelect')
     MENU_DRAG_DROP = ('/', (MENU_VIEW, bq('drag_and_drop')))  # levelSelect/drag_and_drop
     MENU_INPUT = ('/', (MENU_VIEW, bq('basic')))  # levelSelect/basic
-    MENU_LISTVIEW = ('/', (MENU_VIEW, bq('list_view')))  # levelSelect/basic
+    MENU_LISTVIEW = ('/', (MENU_VIEW, bq('list_view')))  # levelSelect/list_view
+    MENU_WAIT_ANY_UI = ('/', (MENU_VIEW, bq('wait_ui')))  # levelSelect/wait_ui
 
     INPUT_VIEW = bq('playBasic')
     INPUT_FILED = ('>', (INPUT_VIEW, bq('pos_input')))  # playBasic>pos_input
@@ -35,3 +36,9 @@ b
     DRAG_STAR = ('>', (DRAG_VIEW, bq('star')))  # playDragAndDrop>star
     DRAG_SHELL = ('>', (DRAG_VIEW, bq('shell')))  # playDragAndDrop>shell
     DRAG_SCORE = ('>', (DRAG_VIEW, bq('scoreVal')))  # playDragAndDrop>scoreVal
+
+    WAIT_ANY_UI_VIEW = bq('playWaitingForUI')
+    FISH_EMITTER = ('>', (WAIT_ANY_UI_VIEW, bq('fish_emitter')))  # playWaitingForUI>fish_emitter
+    BOMB = ('/', (FISH_EMITTER, bq('bomb')))  # playWaitingForUI>fish_emitter/bomb
+    BLUE_FISH = ('/', (FISH_EMITTER, bq('blue')))  # playWaitingForUI>fish_emitter/blue
+    YELLOW_FISH = ('/', (FISH_EMITTER, bq('yellow')))  # playWaitingForUI>fish_emitter/yellow

@@ -20,10 +20,11 @@ How to use?
 **3.** Connect Device and run the script.
 ```
     cd Poco-pytest-allure
-    pytest # python main.py(to use pytest-xdist)
+    pytest
 ```
 
 **4.** Check the test results with [allure2](https://github.com/allure-framework/allure2/releases).
+
 ```
     * Download the latest version as zip archive from bintray.
     * Unpack the archive to allure-commandline directory.
