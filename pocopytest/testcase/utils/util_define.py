@@ -39,7 +39,7 @@ class SetupDefine(object):
     http://top.gdl.netease.com/poco-res/poco-demo-unity-game-android.zip
     http://top.gdl.netease.com/poco-res/poco-demo-unity-game-win.zip
     """
-    PACKAGE_NAME = os.getenv('PACKAGE_NAME', 'com.netease.poco.u3d.tutorial')
+    PACKAGE_NAME = os.getenv('PACKAGE_NAME', 'com.NetEase')
     APP_PATH_ANDROID = os.getenv('APP_PATH_ANDROID', 'C:\\smb\\tmp\\com.netease.poco.u3d.tutorial.apk')
     APP_PATH_WIN = os.getenv('APP_PATH_WIN',
                              'C:\\smb\\tmp\\poco-demo-unity-game-win\\com.netease.poco.u3d.tutorial.exe')
