@@ -3,6 +3,8 @@
 from pocopytest.testcase.utils.util import *
 from pocopytest.testcase.utils.parametrize import Param
 
+logger = get_logger(__name__)
+
 
 @allure.feature('demo测试')
 @allure.story('输入')

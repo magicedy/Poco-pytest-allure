@@ -6,14 +6,24 @@ from airtest.core.api import device as current_device, connect_device
 from airtest.core.api import start_app, stop_app, sleep, wake
 from airtest.core.win import Windows
 from poco.drivers.unity3d.device import UnityEditorWindow
+from airtest.utils.logger import get_logger
 
 from pocopytest.lib.utils.installation import install_android_app
-from pocopytest.testcase.utils.util import logger
+from pocopytest.testcase.utils.util import SD
+from pocopytest.lib.utils.atxserver2 import AtxServer2
+
+logger = get_logger(__name__)
 
 
-def init_app(plat, package_name, app_path, sleep_time, serialno=None):
+def init_app(plat=SD.PLAT, package_name=SD.PACKAGE_NAME, app_path=SD.APP_PATH[SD.PLAT], sleep_time=SD.SLEEP_TIME,
+             serialno=SD.SERIALNO):
     dev = None
     if plat == 'android':
+        if SD.USE_ATX_SERVER2:
+            atx_server2 = AtxServer2()
+            device_info = atx_server2.get_usable_device_info()
+            SD.UDID = device_info['udid']
+            serialno = device_info['source']['remoteConnectAddress']
         if serialno and serialno.strip() != '':
             if re.search(r'127.0.0.1:\d+', serialno):
                 logger.debug('模拟器用JAVACAP和ADBORI')

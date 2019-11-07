@@ -7,7 +7,9 @@ from configparser import RawConfigParser
 from dotenv import load_dotenv, find_dotenv
 from airtest.core.api import ST
 
-from logzero import logger
+from airtest.utils.logger import get_logger
+
+logger = get_logger(__name__)
 
 
 def convert_to_boolean(value):
@@ -32,8 +34,11 @@ class SetupDefine(object):
     PLAT = os.getenv('PLAT', 'Android').lower()  # 平台'Android','PC_win','PC_editor','iOS','MAC_editor'
     POCO_PORT = int(os.getenv('POCO_PORT', '5001'))  # poco-sdk端口
     SLEEP_TIME = float(os.getenv('SLEEP_TIME', 8))  # 启动app后等待时间
+    WORKER_ID = os.getenv('PYTEST_XDIST_WORKER', None)
     SERIALNO = os.getenv('SERIALNO', None)
+    UDID = ''
     SNAP_OFF = convert_to_boolean(os.getenv('SNAP_OFF', 'false'))  # 是否关闭截图
+    USE_ATX_SERVER2 = convert_to_boolean(os.getenv('USE_ATX_SERVER2', 'false'))  # 是否使用atx-server2
     """
     https://poco.readthedocs.io/zh_CN/latest/source/doc/poco-example/index.html
     http://top.gdl.netease.com/poco-res/poco-demo-unity-game-android.zip

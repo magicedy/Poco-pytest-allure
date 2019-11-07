@@ -4,4 +4,4 @@ pytest-rerunfailures
 pytest-xdist
 allure-pytest
 python-dotenv
-logzero
+requests

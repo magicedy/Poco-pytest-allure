@@ -2,6 +2,8 @@
 
 from pocopytest.testcase.utils.util import *
 
+logger = get_logger(__name__)
+
 
 @allure.feature('demo测试')
 @allure.story('拖动')

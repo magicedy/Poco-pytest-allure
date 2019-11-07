@@ -1,19 +1,40 @@
 # coding=utf-8
 
+import logging
 
 import allure
 import pytest
-from logzero import setup_default_logger
 from airtest.core.api import *
 from poco.exceptions import *
 from poco.proxy import UIObjectProxy
+from airtest.utils.logger import get_logger
 
 from pocopytest.testcase.utils.util_define import SetupDefine as SD
 from pocopytest.testcase.utils.ui_define import UIDefine as UI
 from pytest_markers import *
 
-# todo: 待兼容实时输出日志
-logger = setup_default_logger(level=SD.TESTCASE_LOG_LEVEL)
+logger = get_logger(__name__)
+
+
+def init_logging(name, level=logging.DEBUG):
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    if logger.handlers:
+        for handler in logger.handlers:
+            logger.removeHandler(handler)
+    handler = logging.StreamHandler()
+    _fmt = '[%(levelname)1.1s %(asctime)s %(module)s:%(lineno)d] %(message)s'
+    if SD.WORKER_ID:
+        _fmt = f'[{SD.WORKER_ID}]{_fmt}'
+    formatter = logging.Formatter(
+        fmt=_fmt,
+        datefmt='%y%m%d %H:%M:%S'
+    )
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+
+
+init_logging(name=__name__.split('.')[0], level=SD.TESTCASE_LOG_LEVEL)
 
 
 def allure_snap(snap_off=SD.SNAP_OFF):
